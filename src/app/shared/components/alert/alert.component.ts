@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input } from '@angular/core';
 
 @Component({
   selector: 'app-alert',
@@ -7,4 +7,10 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
   styleUrls: ['./alert.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class AlertComponent { }
+export class AlertComponent { 
+
+
+   message = input.required<string>();
+
+
+}

@@ -1,3 +1,10 @@
 :host {
   display: block;
 }
+
+
+
+.swiper {
+  width: 80%;
+  height: 80%
+}

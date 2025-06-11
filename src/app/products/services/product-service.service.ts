@@ -2,7 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { inject, Injectable } from '@angular/core';
 import { environment } from '../../../environments/environment';
 import { catchError, Observable, throwError } from 'rxjs';
-import { ProductsResponse } from '../interfaces/product-response';
+import { Product, ProductsResponse } from '../interfaces/product-response';
 
 interface OptionRequest {
   limit?: number,
@@ -44,6 +44,18 @@ export class ProductService {
 
 
   }
+
+
+  
+    getProductByIdSlug(idSlug: string ): Observable<Product> {
+
+
+        const url = `${environment.baseUrl}/products/${idSlug}`;
+
+        return this.http.get<Product>( url )
+
+
+    }
 
 
 

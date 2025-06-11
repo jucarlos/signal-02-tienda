@@ -3,10 +3,11 @@ import { Product } from '../../interfaces/product-response';
 import { RouterLink } from '@angular/router';
 import { SlicePipe } from '@angular/common';
 import { environment } from '../../../../environments/environment';
+import { ProductImagePipe } from '@products/pipes/product-image.pipe';
 
 @Component({
   selector: 'product-card',
-  imports: [RouterLink, SlicePipe],
+  imports: [RouterLink, SlicePipe ,ProductImagePipe],
   templateUrl: './product-card.component.html',
   styleUrls: ['./product-card.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
