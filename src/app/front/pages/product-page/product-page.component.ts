@@ -1,7 +1,8 @@
-import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, OnInit } from '@angular/core';
 import { rxResource } from '@angular/core/rxjs-interop';
 import { ActivatedRoute } from '@angular/router';
 import { ProductService } from '@products/services/product-service.service';
+import { switchMap } from 'rxjs';
 import { CarouselImagesComponent } from 'src/app/shared/components/carousel-images/carousel-images.component';
 
 
@@ -12,19 +13,23 @@ import { CarouselImagesComponent } from 'src/app/shared/components/carousel-imag
   styleUrls: ['./product-page.component.css'],
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ProductPageComponent {
+export class ProductPageComponent  {
+ 
+ 
+  
 
-
-    activatedRoute = inject(ActivatedRoute );
+  activatedRoute = inject(ActivatedRoute );
   productService = inject( ProductService );
 
   productIdSlug = this.activatedRoute.snapshot.params['idSlug'];
+  
 
 
-  productResource = rxResource({
+  public productResource = rxResource({
     params: ( ) => ( { idSlug: this.productIdSlug }),
+   
     stream: ( {params} ) => {
-      console.log('jola' ,params );
+      console.log('Por aquí voy:' ,params );
       return this.productService.getProductByIdSlug( params.idSlug );
     }
   })

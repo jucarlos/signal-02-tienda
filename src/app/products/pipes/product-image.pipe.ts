@@ -14,6 +14,8 @@ export class ProductImagePipe implements PipeTransform {
     if ( typeof value === 'string'){
       return `${baseUrl}/files/product/${value}`;
     }
+
+    
     const image = value[0];
     if ( !image ){
       return './assets/img/no-image.jpg';

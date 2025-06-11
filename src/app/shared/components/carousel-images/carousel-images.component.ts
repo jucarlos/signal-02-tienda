@@ -1,4 +1,4 @@
-import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, input, viewChild } from '@angular/core';
+import { AfterViewInit, ChangeDetectionStrategy, Component, ElementRef, input, ViewChild, viewChild } from '@angular/core';
 
 
 
@@ -25,6 +25,7 @@ export class CarouselImagesComponent implements AfterViewInit {
 
 
   images = input.required<string[]>();
+
   divSwiper = viewChild.required<ElementRef>('swiperDiv');
 
   ngAfterViewInit(): void {

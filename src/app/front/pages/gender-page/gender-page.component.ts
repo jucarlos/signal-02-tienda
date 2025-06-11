@@ -16,7 +16,7 @@ import { AlertComponent } from 'src/app/shared/components/alert/alert.component'
 export class GenderPageComponent { 
 
 
-     activatedRoute = inject( ActivatedRoute );
+   activatedRoute = inject( ActivatedRoute );
    productsService = inject( ProductService );
 
    gender = toSignal(
@@ -33,6 +33,7 @@ export class GenderPageComponent {
     // tengo questar pendiente de this.gender y lo llamo gender
     
     params: () => ( this.gender() ),
+    
     stream: ( { params } ) => {
 
       console.log( 'En el ***' ,params );

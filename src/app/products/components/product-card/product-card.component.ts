@@ -17,12 +17,12 @@ export class ProductCardComponent {
 
   product = input.required<Product>();
 
-  imagen() {
+  // imagen() {
 
-    const url = `${environment.baseUrl}/files/product/${this.product().images[0]}`;
-    console.log( url )
-    return url;
-  }
+  //   const url = `${environment.baseUrl}/files/product/${this.product().images[0]}`;
+  //   console.log( url )
+  //   return url;
+  // }
 
 
 
